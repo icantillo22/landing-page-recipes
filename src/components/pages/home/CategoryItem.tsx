@@ -29,7 +29,7 @@ export default function CategoryItem({ idCategory, strCategory, strCategoryThumb
             className="h-8 w-8 object-cover rounded-full" 
             loading="lazy"
             src={strCategoryThumb} 
-            alt={"Image Category - " + strCategory}
+            alt={`Image Category - ${idCategory}`}
           />
         )
       }

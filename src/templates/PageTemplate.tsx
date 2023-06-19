@@ -1,7 +1,7 @@
 import Header from "../components/common/Header";
 import IPageTemplate from "../interfaces/templates/PageTemplate.interface";
 
-export default function PageTemplate({ showHeader = true, showFooter = true, children }: IPageTemplate) {
+export default function PageTemplate({ showHeader = true, children }: IPageTemplate) {
   return (
     <>      
       {showHeader && <Header />}

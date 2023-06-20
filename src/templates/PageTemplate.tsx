@@ -5,7 +5,7 @@ export default function PageTemplate({ showHeader = true, children }: IPageTempl
   return (
     <>      
       {showHeader && <Header />}
-      <main className="max-w-screen-2xl w-10/12 mx-auto pb-10">
+      <main className="max-w-screen-2xl w-10/12 mx-auto py-10">
         {children}
       </main>
     </>

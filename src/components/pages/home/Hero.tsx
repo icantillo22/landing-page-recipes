@@ -4,7 +4,7 @@ import logoPlayStore from "../../../../public/assets/logos/play-store.png";
 
 export default function Hero () {
   return (
-    <section className="w-full flex flex-col mt-10 gap-y-5">
+    <section className="w-full flex flex-col gap-y-5">
       <article className="lg:w-7/12 2xl:w-5/12 mx-auto flex flex-col gap-y-2 text-center text-custom-gray">
         <h2 className="text-lg md:text-2xl text-left font-semibold">
           “ People who loves to eat are always Best People

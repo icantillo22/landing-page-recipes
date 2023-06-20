@@ -6,14 +6,29 @@ export default function CategoryItem({ idCategory, strCategory, strCategoryThumb
   
   const { filters, setFilters } = useContext(FiltersContext);
   const [reactiveStyles, setReactiveStyles] = useState<string>('');
+
+  const toggleReactiveStyles = ({ isActive }: {isActive: boolean}) => {
+    if ( !isActive ) {
+      setReactiveStyles('bg-gray-200 text-gray-500')
+      return
+    }
+
+    setReactiveStyles('bg-custom-orange text-white');
+  }
   
   useEffect(() => {
+
+    if (strCategory == 'Todas' && filters.category == 'all') {
+      toggleReactiveStyles({ isActive: true })
+      return
+    }
+
     if( filters.category != strCategory ) {
-      setReactiveStyles('bg-gray-200 text-gray-500')
+      toggleReactiveStyles({ isActive: false })
       return
     };
 
-    setReactiveStyles('bg-custom-orange text-white');
+    toggleReactiveStyles({ isActive: true })
   }, [filters.category])
 
   const setCategory = () => setFilters({ ...filters, category: strCategory });

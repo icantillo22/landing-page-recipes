@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import { getRandomRecipe } from "../services/getRecipes";
+import { getRecipe } from "../services/getRecipes";
 import { IRecipe } from "../interfaces/services/Recipe.interface";
 
-export default function useFetchRandomRecipe () {  
+export default function useFetchRecipe ({ isRandom, id }: { isRandom: boolean, id?: string }) {  
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [recipe, setRecipe] = useState<IRecipe | null>(null);
 
   useEffect(() => {
     setIsLoading(true);
-    getRandomRecipe()
+    getRecipe({isRandom, id})
       .then((res) => {
         if ( !Boolean(res.data) ) return
         setRecipe(res.data);

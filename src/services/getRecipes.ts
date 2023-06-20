@@ -13,9 +13,11 @@ export const getRecipeByCategory = async (category: string): Promise<IResponseRe
   return {data: res.meals}
 }
 
-export const getRandomRecipe = async (): Promise<IResponseRecipe> => {
+export const getRecipe = async ({ id, isRandom }: { isRandom: boolean, id?: string }): Promise<IResponseRecipe> => {
   
-  const req = await fetch(`${BASE_URL}/random.php`)
+  let url = isRandom ? `${BASE_URL}/random.php` : `${BASE_URL}/lookup.php?i=${id}`;
+
+  const req = await fetch(url)
   const res = await req.json();
 
   return {data: res.meals[0]}

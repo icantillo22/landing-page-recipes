@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import { StarIcon, HeartIcon as HeartIconOn  } from "@heroicons/react/24/solid"
-import { HeartIcon as HeartIconOf } from "@heroicons/react/24/outline"
 import getRandomNumber from "../../../utils/getRandomNumber";
 import ICardRecipe from "../../../interfaces/components/common/cards/CardRecipe.interface";
 import { Link } from "react-router-dom";
@@ -10,7 +8,6 @@ import Rating from "../Rating";
 export default function CardRecipe({ id, title, url }: ICardRecipe) {
 
   const [reviews, setReviews] = useState<number>(0);
-  const ratings = new Array(5).fill(null);
   
   const cutTitle = () => {
     const newTitle = title.split(' ');
